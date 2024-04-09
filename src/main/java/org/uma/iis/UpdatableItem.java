@@ -16,8 +16,11 @@ public abstract class UpdatableItem extends Item {
   }
 
   protected abstract void updateRegularQuality();
-  protected abstract void updateSellIn();
   protected abstract void updateExpiredQuality();
+
+  protected void updateSellIn() {
+    sellIn = sellIn - 1;
+  }
 
   protected boolean hasExpired() {
     return sellIn < 0;

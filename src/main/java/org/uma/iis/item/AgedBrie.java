@@ -15,11 +15,6 @@ public class AgedBrie extends UpdatableItem {
   }
 
   @Override
-  protected void updateSellIn() {
-    sellIn = sellIn - 1;
-  }
-
-  @Override
   protected void updateExpiredQuality() {
     increaseQuality();
   }
