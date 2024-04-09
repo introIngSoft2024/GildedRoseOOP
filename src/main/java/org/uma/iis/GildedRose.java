@@ -79,6 +79,7 @@ class GildedRose {
     }
   }
 
+
   private void decreaseQuality(Item item) {
     if (item.quality > 0) {
       item.quality = item.quality - 1;
@@ -90,7 +91,6 @@ class GildedRose {
       item.quality = item.quality + 1;
     }
   }
-
   private boolean isBackstagePass(Item item) {
     return item.name.equals(BACKSTAGE_PASS);
   }
