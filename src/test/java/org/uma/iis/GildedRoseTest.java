@@ -114,8 +114,6 @@ class GildedRoseTest {
     }
   }
 
-  /*
-
      @Nested
      @DisplayName("When update a backstage pass")
      class TestCasesForBackstagePass {
@@ -222,7 +220,7 @@ class GildedRoseTest {
              assertEquals(0, newQuality);
          }
      }
-
+/*
      @Nested
      @DisplayName("When update Sulfuras")
      class TestCasesForSulfuras {

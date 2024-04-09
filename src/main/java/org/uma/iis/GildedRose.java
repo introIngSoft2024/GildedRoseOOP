@@ -1,22 +1,18 @@
 package org.uma.iis;
 
 class GildedRose {
-  public static final String BACKSTAGE_PASS = "Backstage passes to a TAFKAL80ETC concert";
-  public static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
-  public static final String AGED_BRIE = "Aged Brie";
-  public static final int MAX_QUALITY = 50;
-  Item[] items;
+  UpdatableItem[] items;
 
-  public GildedRose(Item[] items) {
+  public GildedRose(UpdatableItem[] items) {
     this.items = items;
   }
 
   public void updateQuality() {
-    for (Item item : items) {
-      updateItem(item);
+    for (UpdatableItem item : items) {
+      item.updateItem();
     }
   }
-
+/*
   private void updateItem(Item item) {
     updateRegularQuality(item);
     updateSellIn(item);
@@ -94,4 +90,6 @@ class GildedRose {
   private boolean isBackstagePass(Item item) {
     return item.name.equals(BACKSTAGE_PASS);
   }
+
+ */
 }
