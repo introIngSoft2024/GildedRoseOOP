@@ -1,4 +1,6 @@
-package org.uma.iis;
+package org.uma.iis.item;
+
+import org.uma.iis.UpdatableItem;
 
 public class Normal extends UpdatableItem {
   public Normal(String name, int sellIn, int quality) {

@@ -1,4 +1,6 @@
-package org.uma.iis;
+package org.uma.iis.item;
+
+import org.uma.iis.UpdatableItem;
 
 public class Sulfuras extends UpdatableItem {
   public static final String SULFURAS = "Sulfuras, Hand of Ragnaros";

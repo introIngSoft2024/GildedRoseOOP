@@ -5,6 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.uma.iis.item.AgedBrie;
+import org.uma.iis.item.BackstagePass;
+import org.uma.iis.item.Normal;
+import org.uma.iis.item.Sulfuras;
 
 @DisplayName(("The Gilded Rose"))
 class GildedRoseTest {

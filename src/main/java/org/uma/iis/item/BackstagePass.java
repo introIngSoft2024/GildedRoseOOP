@@ -1,4 +1,6 @@
-package org.uma.iis;
+package org.uma.iis.item;
+
+import org.uma.iis.UpdatableItem;
 
 public class BackstagePass extends UpdatableItem {
   public static final String BACKSTAGE_PASS = "Backstage passes to a TAFKAL80ETC concert";
