@@ -5,10 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.uma.iis.item.AgedBrie;
-import org.uma.iis.item.BackstagePass;
-import org.uma.iis.item.Normal;
-import org.uma.iis.item.Sulfuras;
+import org.uma.iis.item.*;
 
 @DisplayName(("The Gilded Rose"))
 class GildedRoseTest {
@@ -301,97 +298,94 @@ class GildedRoseTest {
       assertEquals(quality - 2, newQuality);
     }
   }
-  /*
-     @Nested
-     @DisplayName("When update a conjured item")
-     class TestCasesForConjuredItems {
 
-         @DisplayName("Decreases its quality by two if sellIn is greater than one")
-         @Test
-         void givenAQualityValueAndPositiveSellInWhenUpdateThenQualityDecreasesByOne() {
-             // Arrange
-             int quality = 10;
-             int sellIn = 2;
-             Conjured item = new Conjured("Item name", sellIn, quality);
-             GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
+  @Nested
+  @DisplayName("When update a conjured item")
+  class TestCasesForConjuredItems {
 
-             // Act
-             gildedRose.updateQuality();
+    @DisplayName("Decreases its quality by two if sellIn is greater than one")
+    @Test
+    void givenAQualityValueAndPositiveSellInWhenUpdateThenQualityDecreasesByOne() {
+      // Arrange
+      int quality = 10;
+      int sellIn = 2;
+      Conjured item = new Conjured("Item name", sellIn, quality);
+      GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
 
-             // Assert
-             int newQuality = item.quality;
-             assertEquals(quality - 2, newQuality);
-         }
+      // Act
+      gildedRose.updateQuality();
 
-         @DisplayName("Decreases its quality by four if sellIn is zero")
-         @Test
-         void givenAQualityValueAndSellInIsZeroWhenUpdateThenQualityDecreasesByFour() {
-             // Arrange
-             int quality = 10;
-             int sellIn = 0;
-             Conjured item = new Conjured("Conjured item", sellIn, quality);
-             GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
+      // Assert
+      int newQuality = item.quality;
+      assertEquals(quality - 2, newQuality);
+    }
 
-             // Act
-             gildedRose.updateQuality();
+    @DisplayName("Decreases its quality by four if sellIn is zero")
+    @Test
+    void givenAQualityValueAndSellInIsZeroWhenUpdateThenQualityDecreasesByFour() {
+      // Arrange
+      int quality = 10;
+      int sellIn = 0;
+      Conjured item = new Conjured("Conjured item", sellIn, quality);
+      GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
 
-             // Assert
-             int newQuality = item.quality;
-             assertEquals(quality - 4, newQuality);
-         }
+      // Act
+      gildedRose.updateQuality();
 
-         @DisplayName("Decreases its quality to zero if its value is one")
-         @Test
-         void givenAQualityValueOfTwoWhenUpdateThenQualityDecreasesToOne() {
-             // Arrange
-             int quality = 1;
-             int sellIn = 3;
-             Conjured item = new Conjured("Conjured item", sellIn, quality);
-             GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
+      // Assert
+      int newQuality = item.quality;
+      assertEquals(quality - 4, newQuality);
+    }
 
-             // Act
-             gildedRose.updateQuality();
+    @DisplayName("Decreases its quality to zero if its value is one")
+    @Test
+    void givenAQualityValueOfTwoWhenUpdateThenQualityDecreasesToOne() {
+      // Arrange
+      int quality = 1;
+      int sellIn = 3;
+      Conjured item = new Conjured("Conjured item", sellIn, quality);
+      GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
 
-             // Assert
-             int newQuality = item.quality;
-             assertEquals(0, newQuality);
-         }
+      // Act
+      gildedRose.updateQuality();
 
-         @DisplayName("Decreases its quality to zero if its value is two")
-         @Test
-         void givenAQualityValueOfTwoWhenUpdateThenQualityDecreasesToZero() {
-             // Arrange
-             int quality = 2;
-             int sellIn = 3;
-             Conjured item = new Conjured("Conjured item", sellIn, quality);
-             GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
+      // Assert
+      int newQuality = item.quality;
+      assertEquals(0, newQuality);
+    }
 
-             // Act
-             gildedRose.updateQuality();
+    @DisplayName("Decreases its quality to zero if its value is two")
+    @Test
+    void givenAQualityValueOfTwoWhenUpdateThenQualityDecreasesToZero() {
+      // Arrange
+      int quality = 2;
+      int sellIn = 3;
+      Conjured item = new Conjured("Conjured item", sellIn, quality);
+      GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
 
-             // Assert
-             int newQuality = item.quality;
-             assertEquals(0, newQuality);
-         }
+      // Act
+      gildedRose.updateQuality();
 
-         @DisplayName("If quality is one and sellIn is zero, quality value is zero")
-         @Test
-         void givenAQualityValueOfOneAndSellInIsZeroWhenUpdateThenQualityIsZero() {
-             // Arrange
-             int quality = 1;
-             int sellIn = 0;
-             Conjured item = new Conjured("Conjured item", sellIn, quality);
-             GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
+      // Assert
+      int newQuality = item.quality;
+      assertEquals(0, newQuality);
+    }
 
-             // Act
-             gildedRose.updateQuality();
+    @DisplayName("If quality is one and sellIn is zero, quality value is zero")
+    @Test
+    void givenAQualityValueOfOneAndSellInIsZeroWhenUpdateThenQualityIsZero() {
+      // Arrange
+      int quality = 1;
+      int sellIn = 0;
+      Conjured item = new Conjured("Conjured item", sellIn, quality);
+      GildedRose gildedRose = new GildedRose(new UpdatableItem[] {item});
 
-             // Assert
-             int newQuality = item.quality;
-             assertEquals(0, newQuality);
-         }
+      // Act
+      gildedRose.updateQuality();
 
-     }
-
-  */
+      // Assert
+      int newQuality = item.quality;
+      assertEquals(0, newQuality);
+    }
+  }
 }
